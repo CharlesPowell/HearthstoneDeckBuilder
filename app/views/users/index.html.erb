@@ -1,0 +1,13 @@
+<h1>All the Users</h1>
+
+<%= render partial: 'navigation'%>
+
+<ul>
+
+  <% @users.each do |user|%>
+    <li>
+      <%= user.name %>
+    </li>
+  <% end %>
+
+</ul>
