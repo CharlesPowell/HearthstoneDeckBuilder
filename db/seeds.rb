@@ -23,7 +23,7 @@ set = JSON.parse(open("#{Rails.root}/db/AllSets.json").read)
         :rarity => card['rarity'],
         :faction => card['faction'],
         :race => card['race'],
-        :playerclass => card['playerclass'],
+        :playerclass => card['playerClass'],
         :text => card['text'],
         :inPlayText => card['inPlayText'],
         :mechanics => card['mechanics'],
@@ -33,10 +33,7 @@ set = JSON.parse(open("#{Rails.root}/db/AllSets.json").read)
         :health => card['health'],
         :durability => card['durability'],
         :blizzid => card['id'],
-        :collectible => card['collectible'],
-        :elite => card['elite'],
-        :howToGet => card['howToG et'],
-        :howToGetGold => card['howToGetGold']
+        :collectible => card['collectible']
         )
       end
 
@@ -59,10 +56,7 @@ set = JSON.parse(open("#{Rails.root}/db/AllSets.json").read)
         :health => card['health'],
         :durability => card['durability'],
         :blizzid => card['id'],
-        :collectible => card['collectible'],
-        :elite => card['elite'],
-        :howToGet => card['howToG et'],
-        :howToGetGold => card['howToGetGold']
+        :collectible => card['collectible']
         )
       end
       set["Curse of Naxxramas"].each do |card|
@@ -84,10 +78,7 @@ set = JSON.parse(open("#{Rails.root}/db/AllSets.json").read)
         :health => card['health'],
         :durability => card['durability'],
         :blizzid => card['id'],
-        :collectible => card['collectible'],
-        :elite => card['elite'],
-        :howToGet => card['howToG et'],
-        :howToGetGold => card['howToGetGold']
+        :collectible => card['collectible']
         )
       end
       set["Goblins vs Gnomes"].each do |card|
@@ -109,10 +100,7 @@ set = JSON.parse(open("#{Rails.root}/db/AllSets.json").read)
         :health => card['health'],
         :durability => card['durability'],
         :blizzid => card['id'],
-        :collectible => card['collectible'],
-        :elite => card['elite'],
-        :howToGet => card['howToG et'],
-        :howToGetGold => card['howToGetGold']
+        :collectible => card['collectible']
         )
       end
       set["Blackrock Mountain"]  .each do |card|
@@ -134,9 +122,6 @@ set = JSON.parse(open("#{Rails.root}/db/AllSets.json").read)
         :health => card['health'],
         :durability => card['durability'],
         :blizzid => card['id'],
-        :collectible => card['collectible'],
-        :elite => card['elite'],
-        :howToGet => card['howToG et'],
-        :howToGetGold => card['howToGetGold']
+        :collectible => card['collectible']
         )
       end

@@ -26,7 +26,7 @@ ActiveRecord::Schema.define(version: 20150522164006) do
     t.string   "playerclass"
     t.string   "text"
     t.string   "inPlayText"
-    t.string   "mechanics",                 array: true
+    t.string   "mechanics",                array: true
     t.string   "flavor"
     t.string   "artist"
     t.integer  "attack"
@@ -34,11 +34,8 @@ ActiveRecord::Schema.define(version: 20150522164006) do
     t.integer  "durability"
     t.string   "blizzid"
     t.boolean  "collectible"
-    t.boolean  "elite"
-    t.string   "howToGet"
-    t.string   "howToGetGold"
-    t.datetime "created_at",   null: false
-    t.datetime "updated_at",   null: false
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
   end
 
   create_table "users", force: :cascade do |t|

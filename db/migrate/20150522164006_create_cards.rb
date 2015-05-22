@@ -18,9 +18,6 @@ class CreateCards < ActiveRecord::Migration
       t.integer :durability
       t.string :blizzid
       t.boolean :collectible
-      t.boolean :elite
-      t.string :howToGet
-      t.string :howToGetGold
 
       t.timestamps null: false
     end
