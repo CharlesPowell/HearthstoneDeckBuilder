@@ -1,12 +1,15 @@
 <ul>
-
+  <% temp = 0 %>
   <% @cards.each do |card|%>
+    <% if card.rarity != nil && card.collectible && card.cardType != 'Hero'%>
     <li>
-      <%= card.name %>
-      <%= card.blizzid %>
-      ---
-      <%= card.cost %>
+      <% temp += 1 %>
+      Name: <%= card.name %><br>
+
+      <%= image_tag card.blizzid+".png" %>
     </li>
+    <% end %>
   <% end %>
+  <%= temp %>
 
 </ul>
