@@ -1,0 +1,14 @@
+<h1>All your decks</h1>
+
+<%= render partial: 'navigation'%>
+
+<ul>
+
+  <% @decks.each do |deck|%>
+    <li>
+      <a href="#"><%= deck.name %></a>
+
+    </li>
+  <% end %>
+
+</ul>

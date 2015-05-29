@@ -1,0 +1,10 @@
+<h1>Create Deck!</h1>
+
+
+
+<%= form_for @deck do |f| %>
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+  <%= f.select :class_name, ["Warrior", "Shaman", "Rogue", "Paladin", "Hunter", "Druid" ,"Warlock", "Mage", "Priest"] %>
+  <%= f.submit %>
+<% end %>

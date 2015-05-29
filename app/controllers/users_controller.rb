@@ -33,6 +33,7 @@ class UsersController < ApplicationController
   def profile
     authenticate!
     @user = current_user
+    @decks = current_user.decks
   end
   def sign_in
 

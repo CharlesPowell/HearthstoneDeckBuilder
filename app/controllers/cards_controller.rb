@@ -7,4 +7,6 @@ class CardsController < ApplicationController
     @card = Card.find(params[:id])
   end
 
+
+
 end

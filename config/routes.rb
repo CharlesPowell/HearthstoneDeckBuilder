@@ -1,9 +1,12 @@
 Rails.application.routes.draw do
   resources :users
+  resources :decks
+
 
   get '/cards' => 'cards#index'
   get '/cards/:id' => 'cards#show'
 
+  get '/deck/:id' => 'decks#show'
 
   get '/sign_in' => 'users#sign_in'
   get '/profile' => 'users#profile'

@@ -1,0 +1,17 @@
+<%= render partial: 'navigation'%>
+
+<h3><%= @deck.name %></h3>
+
+<%= text_field_tag "cardq" %>
+
+<ul>
+  <% @cards.each do |card|%>
+    <% if card.name.include? params[:cardq].to_s %>
+    <li>
+      <%= card.name %>
+      <button type="button" id="add-card">Add Card!</button>
+    </li>
+    <% end %>
+  <% end %>
+
+</ul>
