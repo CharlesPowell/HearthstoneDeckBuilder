@@ -2,16 +2,49 @@
 
 <h3><%= @deck.name %></h3>
 
-<%= text_field_tag "cardq" %>
+<form action="/deck/<%= @deck.id %>" method="get">
+  <input type="text" name="query" placeholder= "Card name...">
+  <input type="submit" value="Find">
+</form>
 
-<ul>
-  <% @cards.each do |card|%>
-    <% if card.name.include? params[:cardq].to_s %>
-    <li>
-      <%= card.name %>
-      <button type="button" id="add-card">Add Card!</button>
-    </li>
-    <% end %>
+
+<div class="wrapper">
+
+
+
+  <h1>Cards in deck!</h1>
+
+    <% @deck.cards.each do |card|%>
+      <div class="deck-card">
+
+          <%= card.name %><br>
+
+          <form action="/decks/<%= @deck.id %>/<%= card.id%>" method="delete">
+            <input type="submit" value="delete card">
+          </form>
+
+      </div>
   <% end %>
 
-</ul>
+
+</div>
+<div class="wrapper">
+
+
+    <!-- <h1>Search Cards!</h1> -->
+
+      <% @cards.first(10).each do |card|%>
+          <% if card.name.include? @query.to_s %>
+          <div class="deck-card">
+            <%= card.name %>
+            <%= image_tag card.blizzid+".png"%>
+            <form action="/decks/<%= @deck.id %>/<%= card.id%>" method="post">
+              <input type="submit" value="add card">
+            </form>
+          </div>
+          <% end %>
+      <% end %>
+
+
+
+</div>

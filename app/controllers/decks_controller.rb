@@ -3,15 +3,34 @@ class DecksController < ApplicationController
   def index
     authenticate!
     @user = current_user
-    @decks = Deck.all
   end
 
   def show
+    puts params
     authenticate!
     @user = current_user
     @deck = Deck.find(params[:id])
+    @query = params[:query]
     @cards = Card.all
+
+
+
   end
+
+  def add_card
+     authenticate!
+     deck = Deck.find(params[:id])
+     deck.cards.push(Card.find(params[:card]))
+     redirect_to "/decks/#{deck.id}"
+  end
+
+  def delete_card
+     authenticate!
+     deck = Deck.find(params[:id])
+     deck.cards.delete(Card.find(params[:card]))
+     redirect_to "/decks/#{deck.id}"
+  end
+
 
   def edit
     authenticate!

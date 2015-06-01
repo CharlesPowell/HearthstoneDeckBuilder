@@ -2,11 +2,14 @@ Rails.application.routes.draw do
   resources :users
   resources :decks
 
+  get '/' => 'users#welcome'
 
   get '/cards' => 'cards#index'
   get '/cards/:id' => 'cards#show'
 
   get '/deck/:id' => 'decks#show'
+  post '/decks/:id/:card' => 'decks#add_card'
+  get '/decks/:id/:card' => 'decks#delete_card'
 
   get '/sign_in' => 'users#sign_in'
   get '/profile' => 'users#profile'
