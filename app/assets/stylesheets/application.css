@@ -13,3 +13,29 @@
  *= require_tree .
  *= require_self
  */
+
+ body{
+   padding-top:30px;
+   background-color: rgb(42, 42, 42);
+   color: white;
+ }
+ .deck-card{
+   img{
+     width: 150px;
+     height: auto;
+   }
+
+   margin: 0 auto;
+   color: red;
+ }
+
+ .wrapper{
+   position: relative;
+ }
+
+ button{
+  background: transparent;
+     border: none !important;
+     font-size:0;
+
+ }

@@ -1,50 +1,83 @@
-<%= render partial: 'navigation'%>
+<!Doctype HTML>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="My website's description as appearing on Google, Bing, Yahoo">
+    <meta name="author" content="Charles Powell">
+    <title>Bootstrap Two-Column Boilerplate</title>
+  </head>
 
-<h3><%= @deck.name %></h3>
-
-<form action="/deck/<%= @deck.id %>" method="get">
-  <input type="text" name="query" placeholder= "Card name...">
-  <input type="submit" value="Find">
-</form>
-
-
-<div class="wrapper">
+  <body>
 
 
 
-  <h1>Cards in deck!</h1>
+    <div class="container">
+        <div class="page-header">
+          <h1>Deck: <%= @deck.name %></h1>
+        </div>
 
-    <% @deck.cards.each do |card|%>
-      <div class="deck-card">
+        <div class="row"><!-- cards in deck -->
 
-          <%= card.name %><br>
+          <% @deck.cards.each do |card|%>
+          <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2 deck-card">
 
-          <form action="/decks/<%= @deck.id %>/<%= card.id%>" method="delete">
-            <input type="submit" value="delete card">
+
+
+
+                <form action="/decks/<%= @deck.id %>/<%= card.id%>" method="delete">
+                  <button type="submit" value="delete card">
+                    <%= image_tag card.blizzid+".png", :class => "img-responsive" %>
+                  </button>
+                </form>
+
+            </div>
+          <% end %>
+
+        </div>
+
+
+
+        <div class="row">
+
+
+          <h1>Search Cards!</h1>
+          <form action="/deck/<%= @deck.id %>" method="get">
+            <input type="text" name="query" placeholder= "Card name...">
+            <select name="option" default="Select Option" value=1>
+              <option value = 0>Sort by Name</option>
+              <option value = 1>Sort by Cost</option>
+              <option value = 2>Class Cards Only</option>
+              <option value = 3>3</option>
+              <option value = 4>4</option>
+
+            </select>
+            <input type="submit" value="Find">
           </form>
 
+            <% @cards.first(24).each do |card|%>
+                    <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2 deck-card">
+                      <form action="/decks/<%= @deck.id %>/<%= card.id%>" method="post">
+                        <button type="submit" value="add card">
+                          <%= image_tag card.blizzid+".png", :class => "img-responsive" %>
+                        </button>
+                      </form>
+                    </div>
+            <% end %>
+
+        </div>
+
+
+    </div>
+
+    <footer class="container">
+      <div class="footer">
+        <h4>Footer/Legal Content</h4>
+        <p>All Hearthstone and Images belong to &copy; Blizzard &copy; 2015 Charlie Powell</p>
+
       </div>
-  <% end %>
+    </footer>
 
-
-</div>
-<div class="wrapper">
-
-
-    <!-- <h1>Search Cards!</h1> -->
-
-      <% @cards.first(10).each do |card|%>
-          <% if card.name.include? @query.to_s %>
-          <div class="deck-card">
-            <%= card.name %>
-            <%= image_tag card.blizzid+".png"%>
-            <form action="/decks/<%= @deck.id %>/<%= card.id%>" method="post">
-              <input type="submit" value="add card">
-            </form>
-          </div>
-          <% end %>
-      <% end %>
-
-
-
-</div>
+  </body>
+</html>

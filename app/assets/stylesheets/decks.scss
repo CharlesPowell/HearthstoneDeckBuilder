@@ -1,13 +1,18 @@
 .deck-card{
-  position: relative;
-  float: left;
-  img{
-    width: 100px;
-    height: auto;
-  }
-  background-color: white;
+
+
+  margin: 0 auto;
 }
 
 .wrapper{
   position: relative;
+}
+input{
+  color: black;
+}
+button{
+ background: transparent;
+    border: none !important;
+    font-size:0;
+
 }

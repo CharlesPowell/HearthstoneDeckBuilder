@@ -6,13 +6,19 @@ class DecksController < ApplicationController
   end
 
   def show
+
     puts params
     authenticate!
     @user = current_user
     @deck = Deck.find(params[:id])
     @query = params[:query]
-    @cards = Card.all
 
+    @cards = Card.all.where("name ILIKE ?", "%#{ @query }%")
+
+    class_cards = @cards.where({playerclass: @deck.class_name})
+    neutral_cards = @cards.where({playerclass: nil})
+    @cards = neutral_cards +  class_cards
+    @cards = @cards.sort_by {|card| card.cost}
 
 
   end
