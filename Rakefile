@@ -29,7 +29,7 @@ namespace :card do
               cmd = ('curl ' + src + " > app/assets/images/"+ card['id']+".png")
               system(cmd)
 
-              sleep(2)
+              sleep(1)
           end
         end
         make_set("Basic")
