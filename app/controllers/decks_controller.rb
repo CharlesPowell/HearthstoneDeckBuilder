@@ -3,6 +3,7 @@ class DecksController < ApplicationController
   def index
     authenticate!
     @user = current_user
+    @deck = Deck.new
   end
 
   def show

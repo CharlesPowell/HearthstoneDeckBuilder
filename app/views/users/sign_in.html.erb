@@ -1,12 +1,48 @@
-<h3>Sign In!</h3>
+<!Doctype HTML>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Hearthstone Deck Building Tool built in Ruby on Rails">
+    <meta name="author" content="Charles Powell">
+    <title>HS Decks</title>
+  </head>
 
-<%= form_tag('/log_in', method: :post) do %>
-  <%= label_tag :name %>
-  <%= text_field_tag :name %>
-  <%= label_tag :password %>
-  <%= password_field_tag :password %>
-  <%= submit_tag "Sign In"%>
-<% end %>
+  <body>
+
+    <%= render partial: "navigation"%>
 
 
-<a href="/users/new">Sign Up!</a>
+    <div class="container">
+
+      <div class="page-header">
+        <h1>Sign In!</h1>
+      </div>
+
+        <div class="row">
+
+
+
+          <%= form_tag('/log_in', method: :post) do %>
+            <%= label_tag :name %>
+            <%= text_field_tag :name %>
+            <%= label_tag :password %>
+            <%= password_field_tag :password %>
+            <%= submit_tag "Sign In"%>
+          <% end %>
+
+          <h3>Need an account?</h3>
+          <h3><a href="/users/new">Sign Up!</a></h3>
+        </div>
+    </div>
+
+    <footer class="container">
+      <div class="footer">
+        <p>All Hearthstone content and images belong to &copy; Blizzard &copy; 2015 Charlie Powell</p>
+
+      </div>
+    </footer>
+
+  </body>
+</html>

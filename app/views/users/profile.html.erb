@@ -1,10 +1,44 @@
-<h3>Welcome back <%= @user.name %></h3>
+<!Doctype HTML>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Hearthstone Deck Building Tool built in Ruby on Rails">
+    <meta name="author" content="Charles Powell">
+    <title>HS Decks</title>
+  </head>
 
-<%= form_tag('/log_out', method: :delete) do %>
-  <%= submit_tag "Log-Out " %>
-<% end %>
+  <body>
 
-<a href="/decks">See your decks!</a>
-<p>
-  You're signed in...
-</p>
+    <%= render partial: "navigation"%>
+
+
+    <div class="container">
+
+      <div class="page-header">
+        <h1>Welcome back <%= @user.name %></h1>
+      </div>
+
+        <div class="row">
+
+
+
+          <h2><a href="/decks">See your decks!</a></h2>
+
+          <h2><a href="/decks/new">Create a Deck!</a></h2>
+
+
+
+        </div>
+    </div>
+
+    <footer class="container">
+      <div class="footer">
+        <p>All Hearthstone content and images belong to &copy; Blizzard &copy; 2015 Charlie Powell</p>
+
+      </div>
+    </footer>
+
+  </body>
+</html>

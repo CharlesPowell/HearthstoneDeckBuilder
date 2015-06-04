@@ -4,14 +4,14 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="My website's description as appearing on Google, Bing, Yahoo">
+    <meta name="description" content="Hearthstone Deck Building Tool built in Ruby on Rails">
     <meta name="author" content="Charles Powell">
-    <title>Bootstrap Two-Column Boilerplate</title>
+    <title><%= @deck.name %></title>
   </head>
 
   <body>
 
-
+    <%= render partial: 'navigation'%>
 
     <div class="container">
         <div class="page-header">

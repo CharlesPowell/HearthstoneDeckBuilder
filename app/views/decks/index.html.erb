@@ -6,9 +6,18 @@
 
   <% @user.decks.each do |deck|%>
     <li>
-      <a href="#"><%= deck.name %></a>
+      <a href="/decks/<%= deck.id%>"><%= deck.name %></a>
 
     </li>
   <% end %>
 
 </ul>
+
+
+
+<%= form_for @deck do |f| %>
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+  <%= f.select :class_name, ["Warrior", "Shaman", "Rogue", "Paladin", "Hunter", "Druid" ,"Warlock", "Mage", "Priest"] %>
+  <%= f.submit %>
+<% end %>

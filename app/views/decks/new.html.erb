@@ -1,10 +1,44 @@
-<h1>Create Deck!</h1>
+<!Doctype HTML>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Hearthstone Deck Building Tool built in Ruby on Rails">
+    <meta name="author" content="Charles Powell">
+    <title><%= @deck.name %></title>
+  </head>
+
+  <body>
+
+    <%= render partial: 'navigation'%>
+
+    <div class="container">
+        <div class="page-header">
+          <h1>Create Deck!</h1>
+        </div>
+
+        <div class="row"><!-- cards in deck -->
+
+          <%= form_for @deck do |f| %>
+            <%= f.label :name %>
+            <%= f.text_field :name %>
+            <%= f.select :class_name, ["Warrior", "Shaman", "Rogue", "Paladin", "Hunter", "Druid" ,"Warlock", "Mage", "Priest"] %>
+            <%= f.submit %>
+          <% end %>
 
 
+        </div>
 
-<%= form_for @deck do |f| %>
-  <%= f.label :name %>
-  <%= f.text_field :name %>
-  <%= f.select :class_name, ["Warrior", "Shaman", "Rogue", "Paladin", "Hunter", "Druid" ,"Warlock", "Mage", "Priest"] %>
-  <%= f.submit %>
-<% end %>
+    </div>
+
+    <footer class="container">
+      <div class="footer">
+        <h4>Footer/Legal Content</h4>
+        <p>All Hearthstone and Images belong to &copy; Blizzard &copy; 2015 Charlie Powell</p>
+
+      </div>
+    </footer>
+
+  </body>
+</html>
