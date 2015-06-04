@@ -15,7 +15,6 @@ gem 'uglifier', '>= 1.3.0'
 # gem 'therubyracer', platforms: :ruby
 gem 'rails_12factor'
 gem 'nokogiri'
-gem 'open-uri'
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'

@@ -17,6 +17,7 @@ namespace :card do
     task :all_images => :environment do
 
 
+        url = 'http://hearthstonehelper.com/GVG_079/'
 
         def make_set(name)
           set = JSON.parse(open("#{Rails.root}/db/AllSets.json").read)
