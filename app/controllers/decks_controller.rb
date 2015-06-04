@@ -26,14 +26,21 @@ class DecksController < ApplicationController
   def add_card
      authenticate!
      deck = Deck.find(params[:id])
-     deck.cards.push(Card.find(params[:card]))
+     copies = deck.cards.where({id: params[:card]})
+     allcards = deck.cards
+     if copies.length <2 && allcards.length < 30
+       deck.cards.push(Card.find(params[:card]))
+     end
      redirect_to "/decks/#{deck.id}"
   end
 
   def delete_card
      authenticate!
      deck = Deck.find(params[:id])
-     deck.cards.delete(Card.find(params[:card]))
+     card = Card.find(params[:card])
+     thecard = IncludeCard.find_by({card_id: params[:card], deck_id: params[:id]})
+     thecard.delete
+
      redirect_to "/decks/#{deck.id}"
   end
 
@@ -41,7 +48,7 @@ class DecksController < ApplicationController
   def edit
     authenticate!
     @user = current_user
-    @deck = User.find(params[:id])
+    @deck = Deck.find(params[:id])
     @cards = Card.all
   end
   def update
@@ -57,6 +64,8 @@ class DecksController < ApplicationController
   end
   def create
     deck = Deck.create(deck_params)
+    user = current_user
+    current_user.decks.push(deck)
     redirect_to "/deck/#{deck.id}"
   end
 

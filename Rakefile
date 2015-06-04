@@ -5,12 +5,16 @@ require File.expand_path('../config/application', __FILE__)
 
 Rails.application.load_tasks
 
+require './app/models/card'
+require './app/models/deck'
+require './app/models/user'
+require 'open-uri'
 
 namespace :card do
 
   namespace :set do
     desc "CURL all images"
-    task :all_images do
+    task :all_images => :environment do
 
 
 
@@ -40,7 +44,7 @@ namespace :card do
     end
 
     desc "All cards"
-    task :all_cards do
+    task :all_cards => :environment  do
 
       def make_set(name)
         set = JSON.parse(open("#{Rails.root}/db/AllSets.json").read)
@@ -71,12 +75,11 @@ namespace :card do
         end
       end
 
-        # make_set("Basic")
-        # make_set("Classic")
-        # make_set("Curse of Naxxramas")
-        # make_set("Goblins vs Gnomes")
-        # make_set("Blackrock Mountain")
-
+        make_set("Basic")
+        make_set("Classic")
+        make_set("Curse of Naxxramas")
+        make_set("Goblins vs Gnomes")
+        make_set("Blackrock Mountain")
         make_set("Reward")
         make_set("Promotion")
 

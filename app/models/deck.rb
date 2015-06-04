@@ -1,6 +1,9 @@
 class Deck < ActiveRecord::Base
   belongs_to :user
-  has_and_belongs_to_many :cards
+  has_many :include_card
+  has_many :cards, through: :include_card
+
+
 
   #validates :cards, length: { is: 30 }
 end

@@ -1,3 +1,4 @@
 class Card < ActiveRecord::Base
-  has_and_belongs_to_many :decks
+  has_many :include_card
+  has_many :decks, through: :include_card
 end

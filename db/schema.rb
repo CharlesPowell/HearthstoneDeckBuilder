@@ -38,14 +38,6 @@ ActiveRecord::Schema.define(version: 20150528212711) do
     t.datetime "updated_at",  null: false
   end
 
-  create_table "cards_decks", force: :cascade do |t|
-    t.integer "card_id"
-    t.integer "deck_id"
-  end
-
-  add_index "cards_decks", ["card_id"], name: "index_cards_decks_on_card_id", using: :btree
-  add_index "cards_decks", ["deck_id"], name: "index_cards_decks_on_deck_id", using: :btree
-
   create_table "decks", force: :cascade do |t|
     t.string   "name"
     t.string   "class_name"
@@ -56,6 +48,14 @@ ActiveRecord::Schema.define(version: 20150528212711) do
 
   add_index "decks", ["user_id"], name: "index_decks_on_user_id", using: :btree
 
+  create_table "include_cards", force: :cascade do |t|
+    t.integer "card_id"
+    t.integer "deck_id"
+  end
+
+  add_index "include_cards", ["card_id"], name: "index_include_cards_on_card_id", using: :btree
+  add_index "include_cards", ["deck_id"], name: "index_include_cards_on_deck_id", using: :btree
+
   create_table "users", force: :cascade do |t|
     t.string   "name"
     t.string   "password_digest"
@@ -63,7 +63,7 @@ ActiveRecord::Schema.define(version: 20150528212711) do
     t.datetime "updated_at",      null: false
   end
 
-  add_foreign_key "cards_decks", "cards"
-  add_foreign_key "cards_decks", "decks"
   add_foreign_key "decks", "users"
+  add_foreign_key "include_cards", "cards"
+  add_foreign_key "include_cards", "decks"
 end
