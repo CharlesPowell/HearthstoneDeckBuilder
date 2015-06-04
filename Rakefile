@@ -32,11 +32,11 @@ namespace :card do
               sleep(2)
           end
         end
-        # make_set("Basic")
-        # make_set("Classic")
-        # make_set("Curse of Naxxramas")
-        # make_set("Goblins vs Gnomes")
-        # make_set("Blackrock Mountain")
+        make_set("Basic")
+        make_set("Classic")
+        make_set("Curse of Naxxramas")
+        make_set("Goblins vs Gnomes")
+        make_set("Blackrock Mountain")
         make_set("Reward")
         make_set("Promotion")
 
