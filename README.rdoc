@@ -3,6 +3,5 @@
 * Hearthstone Deck Building App
 
 
-<tt>rake doc:app</tt>.
-
 [ERD LINK](https://docs.google.com/drawings/d/1fp8rmuYagJPE65ERni-YPnH9SrSxNSvQLwFzvpgS8pk/edit "ERD")
+[I'm a relative reference to a repository file](../blob/master/LICENSE)
