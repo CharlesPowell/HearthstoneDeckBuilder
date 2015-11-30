@@ -1,5 +1,5 @@
 # Hearthstone Deck Building App
-#### [hsdeckbuilder.herokuapp.com](hsdeckbuilder.herokuapp.com)
+#### [hsdeckbuilder.herokuapp.com](hs-deckbuilder.herokuapp.com)
 
 [ERD LINK](https://docs.google.com/drawings/d/1fp8rmuYagJPE65ERni-YPnH9SrSxNSvQLwFzvpgS8pk/edit)
 
